@@ -1,0 +1,940 @@
+```css
+/* ================================
+   GLOBAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f9fc;
+    color: #222;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ================================
+   NAVIGATION BAR
+================================ */
+
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 7%;
+    gap: 25px;
+}
+
+.logo {
+    color: #087f8c;
+    font-size: 28px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #087f8c;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+
+.login-btn,
+.book-btn {
+    display: inline-block;
+    border: none;
+    background-color: #087f8c;
+    color: white;
+    padding: 11px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.login-btn:hover,
+.book-btn:hover {
+    background-color: #056b76;
+    transform: translateY(-1px);
+}
+
+
+/* ================================
+   HERO SECTION
+================================ */
+
+.hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 7%;
+    background-color: #e8f8fa;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    color: #075f68;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    width: 400px;
+    max-width: 45%;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ================================
+   SERVICES
+================================ */
+
+.services {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+    color: #075f68;
+}
+
+.services > p {
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+
+/* ================================
+   SERVICE / DOCTOR CARDS
+================================ */
+
+.service-card {
+    background-color: #ffffff;
+    width: 280px;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+
+    /* Keeps card content properly spaced */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+    color: #087f8c;
+}
+
+.service-card p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+
+/* Doctor Book Appointment Button */
+
+.service-card .book-btn {
+    display: inline-block;
+    margin-top: auto;
+}
+
+
+/* ================================
+   FORMS
+================================ */
+
+form {
+    width: 100%;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #087f8c;
+    box-shadow: 0 0 0 2px rgba(8, 127, 140, 0.1);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form .book-btn {
+    width: 100%;
+}
+
+
+/* ================================
+   APPOINTMENT TABLE
+================================ */
+
+.appointment-table-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    overflow-x: auto;
+}
+
+.appointment-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-table th {
+    background: #087f8c;
+    color: white;
+    padding: 16px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.appointment-table td {
+    padding: 15px 16px;
+    border-bottom: 1px solid #eeeeee;
+    color: #333;
+}
+
+.appointment-table tbody tr:nth-child(even) {
+    background-color: #f7fbfc;
+}
+
+.appointment-table tbody tr:hover {
+    background-color: #eaf7f8;
+}
+
+.appointment-table td:first-child {
+    font-weight: bold;
+}
+
+
+/* ================================
+   CANCEL BUTTON
+================================ */
+
+.cancel-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.cancel-btn:hover {
+    background-color: #b02a37;
+}
+
+
+/* ================================
+   APPOINTMENT STATUS
+================================ */
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.status-pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-confirmed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+
+/* ================================
+   ADMIN STATISTICS
+================================ */
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.stat-card {
+    padding: 25px 15px;
+    border-radius: 12px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.stat-card h3 {
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: #555;
+}
+
+.stat-card p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #087f8c;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background-color: #075f68;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 700px;
+    }
+
+    .hero-image {
+        max-width: 80%;
+    }
+
+    .admin-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 15px 5%;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 50px 5%;
+    }
+
+    .hero-content h2 {
+        font-size: 34px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .services {
+        width: 92%;
+        padding: 45px 0;
+    }
+
+    .services h2 {
+        font-size: 27px;
+    }
+
+    .service-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    form {
+        padding: 22px;
+    }
+
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .login-btn {
+        padding: 9px 18px;
+    }
+}
+```
+
+/* ================================
+   DOCTOR CARD FIX
+================================ */
+
+.doctor-card {
+    height: auto !important;
+    min-height: 220px;
+    justify-content: flex-start;
+}
+
+.doctor-card h3 {
+    margin-bottom: 15px;
+}
+
+.doctor-specialization {
+    margin-bottom: 25px !important;
+}
+
+.doctor-book-btn {
+    position: static !important;
+    display: inline-block !important;
+    margin-top: 0 !important;
+}
+/* =========================================
+   ADMIN DASHBOARD - UI IMPROVEMENT
+========================================= */
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 30px auto;
+    width: 95%;
+    max-width: 1200px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.stat-card h3 {
+    margin-bottom: 12px;
+    color: #075f68;
+    font-size: 17px;
+}
+
+.stat-card p {
+    font-size: 32px;
+    font-weight: bold;
+    color: #087f8c;
+    margin: 0;
+}
+
+
+/* Admin Search Area */
+
+.services > form[method="GET"] {
+    max-width: 1200px;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    margin: 25px auto;
+}
+
+.services > form[method="GET"] input,
+.services > form[method="GET"] select {
+    margin-bottom: 0;
+}
+
+.services > form[method="GET"] input {
+    flex: 1;
+}
+
+.services > form[method="GET"] select {
+    width: 180px;
+}
+
+
+/* Admin Action Links */
+
+.appointment-table td a {
+    color: #087f8c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.appointment-table td a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive Admin Dashboard */
+
+@media (max-width: 900px) {
+
+    .admin-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .services > form[method="GET"] {
+        flex-direction: column;
+    }
+
+    .services > form[method="GET"] input,
+    .services > form[method="GET"] select,
+    .services > form[method="GET"] button {
+        width: 100%;
+    }
+
+}
+/* =========================================
+   DOCTOR CARDS - UI IMPROVEMENT
+========================================= */
+
+.service-container {
+    align-items: stretch;
+}
+
+.service-card {
+    position: relative;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.service-card h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.service-card .book-btn {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    margin-top: auto;
+}
+/* =========================================
+   APPOINTMENT FORM - UI IMPROVEMENT
+========================================= */
+
+.services > p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+form {
+    border: 1px solid #e5eeee;
+}
+
+form label {
+    color: #075f68;
+}
+
+form input,
+form select {
+    background-color: #fbfdfd;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+form input:hover,
+form select:hover {
+    border-color: #087f8c;
+}
+
+form input:focus,
+form select:focus {
+    box-shadow: 0 0 0 3px rgba(8, 127, 140, 0.10);
+}
+
+form .book-btn {
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* =========================================
+   MY APPOINTMENTS - UI IMPROVEMENT
+========================================= */
+
+.appointment-table-container {
+    margin-top: 30px;
+}
+
+.appointment-table td {
+    vertical-align: middle;
+}
+
+.appointment-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.appointment-table tbody tr:hover {
+    background: #eef9fa;
+}
+
+.appointment-table .cancel-btn {
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.appointment-table .cancel-btn:hover {
+    text-decoration: none;
+}
+
+.status-badge {
+    min-width: 85px;
+    text-align: center;
+}
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .login-btn {
+        margin: 0 auto;
+    }
+
+}
+
+/* =========================================
+   HOMEPAGE HERO - UI IMPROVEMENT
+========================================= */
+
+.hero {
+    border-radius: 0 0 20px 20px;
+}
+
+.hero-content h2 {
+    line-height: 1.15;
+}
+
+.hero-content p {
+    color: #555;
+}
+
+.hero-content .book-btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-content .book-btn:hover {
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 5%;
+    }
+
+    .hero-content h2 {
+        font-size: 36px;
+    }
+
+    .hero-image {
+        max-width: 90%;
+    }
+
+}
+/* =========================================
+   ADMIN TABLE - MOBILE IMPROVEMENT
+========================================= */
+
+@media (max-width: 768px) {
+
+    .appointment-table-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .appointment-table {
+        min-width: 900px;
+    }
+
+    .appointment-table th,
+    .appointment-table td {
+        white-space: nowrap;
+    }
+
+}
+
+/* =========================================
+   APPOINTMENT ACTION BUTTONS
+========================================= */
+
+.appointment-table td a {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 6px;
+    background-color: #087f8c;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.appointment-table td a:hover {
+    background-color: #056b76;
+    text-decoration: none;
+}
+
+.appointment-table td .cancel-btn {
+    background-color: #dc3545;
+}
+
+.appointment-table td .cancel-btn:hover {
+    background-color: #b02a37;
+}
+/* =========================================
+   BOOKING SUCCESS PAGE
+========================================= */
+
+.booking-success {
+    max-width: 650px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.booking-success h2 {
+    margin-bottom: 20px;
+}
+
+.booking-details {
+    background: #f8ffff;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.booking-details p {
+    margin: 12px 0;
+}
+
+.success-message {
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   LOGIN & REGISTER PAGE
+========================================= */
+
+.services form {
+    margin-top: 25px;
+}
+
+.services > p {
+    margin-top: 15px;
+    color: #555;
+}
+
+.services > p a {
+    color: #087f8c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.services > p a:hover {
+    text-decoration: underline;
+}
+
+.services form button {
+    transition: transform 0.2s ease,
+                background-color 0.2s ease;
+}
+
+.services form button:hover {
+    transform: translateY(-2px);
+}
