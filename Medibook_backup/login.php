@@ -1,4 +1,4 @@
-```php
+
 <?php
 
 session_start();
@@ -100,4 +100,4 @@ if (mysqli_num_rows($result) === 1) {
 }
 
 ?>
-```
+

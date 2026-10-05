@@ -1,4 +1,4 @@
-```php
+
 <?php
 
 session_start();
@@ -597,4 +597,4 @@ if (!$result) {
 </body>
 
 </html>
-```
+

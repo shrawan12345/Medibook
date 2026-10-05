@@ -1,4 +1,4 @@
-```php
+
 <?php
 
 session_start();
@@ -300,4 +300,4 @@ if (mysqli_query($conn, $sql)) {
 }
 
 ?>
-```
+

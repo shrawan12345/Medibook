@@ -1,4 +1,4 @@
-```php
+
 <?php
 
 session_start();
@@ -204,4 +204,4 @@ dateInput.min =
 </body>
 
 </html>
-```
+
