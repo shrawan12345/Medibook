@@ -1,4 +1,4 @@
-```php
+
 <?php
 
 include "../db.php";
@@ -94,6 +94,15 @@ if (!$result) {
                         ?>
                     </p>
 
+                    <p class="doctor-nmc">
+    NMC No:
+    <?php
+    echo trim($doctor['nmc_number']) !== ''
+        ? htmlspecialchars($doctor['nmc_number'])
+        : 'Not provided';
+    ?>
+</p>
+
                     <a
                         href="Appointment.html?doctor=<?php echo urlencode($doctor['name']); ?>"
                         class="book-btn doctor-book-btn"
@@ -129,4 +138,4 @@ if (!$result) {
 </body>
 
 </html>
-```
+

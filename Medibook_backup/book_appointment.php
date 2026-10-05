@@ -79,6 +79,19 @@ if ($appointment_time < '09:00' || $appointment_time > '17:00') {
     die("Appointment time must be between 9:00 AM and 5:00 PM.");
 }
 
+if ($appointment_time < '09:00' || $appointment_time > '17:00') {
+    die("Appointment time must be between 9:00 AM and 5:00 PM.");
+}
+
+$minutes = (int) substr($appointment_time, 3, 2);
+
+if ($minutes % 10 !== 0) {
+    die("Appointments are in 10-minute slots, for example 10:00, 10:10, 10:20.");
+}
+
+
+/* Get doctor */
+
 
 /* Get doctor */
 

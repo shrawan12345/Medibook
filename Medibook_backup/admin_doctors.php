@@ -1,4 +1,4 @@
-```php
+
 <?php
 
 session_start();
@@ -147,6 +147,8 @@ if (!$result) {
 
                     <th>Specialization</th>
 
+                    <th>NMC Number</th>
+
                     <th>Action</th>
 
                 </tr>
@@ -186,6 +188,14 @@ if (!$result) {
                             ?>
                         </td>
 
+                        <td>
+    <?php
+    echo htmlspecialchars($row['nmc_number']);
+    ?>
+</td>
+
+                        
+
 
                         <td>
 
@@ -212,7 +222,7 @@ if (!$result) {
 
                 <tr>
 
-                    <td colspan="4">
+                    <td colspan="5">
                         No doctors found.
                     </td>
 
@@ -242,4 +252,4 @@ if (!$result) {
 </body>
 
 </html>
-```
+

@@ -147,20 +147,27 @@
         >
 
 
-        <!-- Appointment Time -->
+        <!-- Appointment Time (10-minute slots) -->
 
         <label for="appointment_time">
             Appointment Time
         </label>
 
-        <input
-            type="time"
+        <select
             id="appointment_time"
             name="appointment_time"
-            min="09:00"
-            max="17:00"
             required
         >
+
+            <option value="">
+                Choose a time
+            </option>
+
+        </select>
+
+        <small>
+            Each appointment is 10 minutes, from 9:00 AM to 5:00 PM.
+        </small>
 
 
         <!-- Submit -->
@@ -213,6 +220,37 @@ dateInput.min =
 
 
 /* ================================
+   BUILD 10-MINUTE TIME SLOTS
+================================ */
+
+const timeSelect =
+    document.getElementById("appointment_time");
+
+for (let hour = 9; hour <= 17; hour++) {
+
+    for (let minute = 0; minute < 60; minute += 10) {
+
+        if (hour === 17 && minute > 0) {
+            break;
+        }
+
+        const hh = String(hour).padStart(2, "0");
+        const mm = String(minute).padStart(2, "0");
+
+        const hour12 = hour > 12 ? hour - 12 : hour;
+        const ampm = hour >= 12 ? "PM" : "AM";
+
+        const option = document.createElement("option");
+
+        option.value = `${hh}:${mm}`;
+        option.textContent = `${hour12}:${mm} ${ampm}`;
+
+        timeSelect.appendChild(option);
+    }
+}
+
+
+/* ================================
    LOAD DOCTORS
 ================================ */
 
@@ -252,28 +290,26 @@ fetch("../get_doctors.php")
             urlParams.get("doctor");
 
 
-        
-
         /* Automatically select doctor */
 
-if (selectedDoctor) {
+        if (selectedDoctor) {
 
-    for (let i = 0; i < doctorSelect.options.length; i++) {
+            for (let i = 0; i < doctorSelect.options.length; i++) {
 
-        const optionText =
-            doctorSelect.options[i].text;
+                const optionText =
+                    doctorSelect.options[i].text;
 
-        const doctorName =
-            optionText.split(" - ")[0].trim();
+                const doctorName =
+                    optionText.split(" - ")[0].trim();
 
-        if (doctorName === selectedDoctor) {
+                if (doctorName === selectedDoctor) {
 
-            doctorSelect.selectedIndex = i;
+                    doctorSelect.selectedIndex = i;
 
-            break;
+                    break;
+                }
+            }
         }
-    }
-}
     })
 
     .catch(error => {
